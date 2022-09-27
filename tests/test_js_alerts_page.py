@@ -9,8 +9,7 @@ def js_alerts_page(browser):
     return JsAlerts(browser)
 
 
-@pytest.skip
-def test_js_alerts_page(browser,js_alerts_page):
+def test_js_alerts_page(browser, js_alerts_page):
     with soft_assertions():
         js_alerts_page.load_page()
         assert_that(js_alerts_page.get_title_page()).contains("JavaScript Alerts")
@@ -20,7 +19,6 @@ def test_js_alerts_page(browser,js_alerts_page):
         assert_that(js_alerts_page.is_prompt_button_displayed()).is_true()
 
 
-@pytest.skip
 def test_alert_button(browser, js_alerts_page):
     js_alerts_page.load_page()
     js_alerts_page.click_alert_button()

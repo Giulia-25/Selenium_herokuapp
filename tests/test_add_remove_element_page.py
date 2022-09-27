@@ -1,5 +1,7 @@
 import pytest
+from assertpy import assert_that
 
+from pages import elemental_selenium_page
 from pages.add_remove_elements_page import AddRemoveElementsPage
 from time import sleep
 
@@ -28,11 +30,14 @@ def test_add_and_remove_buttons_functionality(browser, add_remove_page):
         add_remove_page.click_delete_button()
         assert add_remove_page.get_number_of_delete_buttons() == i-1
 
-@pytest.mark.skip
+
 def test_url(browser, add_remove_page):
     add_remove_page.load_page()
 
     assert browser.current_url == add_remove_page.URL, "Check url is ok"
 
-def test_selenium_link(browser):
-    pass
+
+def test_selenium_link(browser, add_remove_page):
+    add_remove_page.load_page()
+    add_remove_page.click_selenium_link()
+    # assert_that(browser.current_url == elemental_selenium_page.URL).is_true()

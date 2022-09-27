@@ -36,3 +36,6 @@ class AddRemoveElementsPage:
 
     def get_number_of_delete_buttons(self):
         return len(self.browser.find_elements(*self.DELETE_BUTTON))
+
+    def click_selenium_link(self):
+        self.browser.find_element(*self.SELENIUM_LINK).click()
