@@ -31,8 +31,6 @@ def test_insert_text(browser, dynamic_controls_page):
     dynamic_controls_page.load_page()
     dynamic_controls_page.click_enable_disable_button()
     dynamic_controls_page.insert_text('Hello world!')
-    # ElementNotInteractableException: Message: element not interactable
-    # am incercat apoi sa pun explicit wait, dar nu cred ca nimeresc ce trebuie dupa EC.
 
 
 

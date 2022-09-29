@@ -25,8 +25,8 @@ class DynamicControls:
         self.browser.find_element(*self.CHECKBOX).click()
 
     def insert_text(self, text):
-        text = WebDriverWait(self.browser, 5).until(EC.text_to_be_present_in_element_attribute(By.CSS_SELECTOR, '[type="text"]'))
-        return text.send_keys(text)
+        text_input = WebDriverWait(self.browser, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[type="text"]')))
+        return text_input.send_keys(text)
 
     def click_enable_disable_button(self):
         self.browser.find_element(*self.ENABLE_DISABLE_BUTTON).click()
