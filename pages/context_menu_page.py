@@ -17,3 +17,7 @@ class ContextMenu:
     def click_context_menu(self):
         action = ActionChains(self.browser)
         action.context_click(self.browser.find_element(*self.CONTEXT_MENU)).perform()
+
+    def accept_alert(self):
+        alert = self.browser.switch_to.alert
+        alert.accept()

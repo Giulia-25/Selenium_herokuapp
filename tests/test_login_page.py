@@ -31,8 +31,17 @@ def test_check_login_successfully(browser,login_page):
     assert_that(secure_page.is_logout_button_displayed()).is_true()
 
 
-def test_login_negative(browser, login_page):
+def test_login_negative_username(browser, login_page):
     login_page.load_page()
     login_page.insert_username("tom")
     login_page.insert_password("SuperSecretPassword!")
     login_page.click_login_button()
+    assert_that(login_page.get_flash_error()).contains("Your username is invalid!")
+
+
+def test_login_negative_password(browser, login_page):
+    login_page.load_page()
+    login_page.insert_username("tomsmith")
+    login_page.insert_password("blaaaa")
+    login_page.click_login_button()
+    assert_that(login_page.get_flash_error()).contains("Your password is invalid!")

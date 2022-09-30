@@ -21,5 +21,4 @@ def test_retrieve_password_negative(browser, forgot_password_page):
     forgot_password_page.load_page()
     forgot_password_page.insert_email("bla.gmail.com")
     forgot_password_page.click_retrieve_pass_button()
-
-
+    assert_that(forgot_password_page.is_email_correct()).contains('Internal Server Error')
