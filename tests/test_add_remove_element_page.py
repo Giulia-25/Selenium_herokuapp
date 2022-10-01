@@ -58,10 +58,12 @@ def test_selenium_url(browser, add_remove_page):
     add_remove_page.load_page()
     add_remove_page.click_selenium_link()
     elemental_selenium_page = ElementalSelenium(browser)
-    elemental_selenium_page.load_page()
-    assert_that(elemental_selenium_page.SELENIUM_URL).is_equal_to("http://www.elementalselenium.com/")
+    # elemental_selenium_page.load_page()
+    # assert_that(elemental_selenium_page.SELENIUM_URL).is_equal_to("http://www.elementalselenium.com/")
+    assert_that(browser.current_url).is_equal_to(elemental_selenium_page.SELENIUM_URL)
 
 # InvalidArgumentException: Message: invalid argument: 'url' must be a string
+# AssertionError: Expected <https://the-internet.herokuapp.com/add_remove_elements/> to be equal to <('css selector', '[target="_blank"]')>, but was not.
 
 
 # am transformat totul in assert_that
