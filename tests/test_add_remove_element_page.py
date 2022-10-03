@@ -51,7 +51,7 @@ def test_add_and_remove_buttons_functionality(browser, add_remove_page):
 def test_url(browser, add_remove_page):
     add_remove_page.load_page()
     # assert browser.current_url == add_remove_page.URL, "Check url is ok"
-    assert_that(add_remove_page.URL).is_equal_to("https://the-internet.herokuapp.com/add_remove_elements/")
+    assert_that(browser.current_url).is_equal_to(add_remove_page.URL)
 
 
 def test_selenium_url(browser, add_remove_page):

@@ -29,7 +29,7 @@ class DynamicControls:
 
     def insert_text(self, text):
         text_input = WebDriverWait(self.browser, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[type="text"]')))
-        return text_input.send_keys(text)
+        text_input.send_keys(text)
 
     def is_text_displayed(self):
         return self.browser.find_element(*self.TEXT_INPUT).is_displayed()

@@ -12,7 +12,7 @@ def browser():
     global driver
     # initializam un browser
     options = Options()
-    options.add_argument('--headless')
+    # options.add_argument('--headless')
     s = Service(ChromeDriverManager().install())
     driver = selenium.webdriver.Chrome(service=s, chrome_options=options)
     # driver = selenium.webdriver.Firefox(executable_path=GeckoDriverManager().install())

@@ -2,7 +2,8 @@ from selenium.webdriver.common.by import By
 
 
 class ElementalSelenium:
-    SELENIUM_URL = (By.CSS_SELECTOR, '[target="_blank"]')
+    # SELENIUM_URL = (By.CSS_SELECTOR, '[target="_blank"]')
+    SELENIUM_URL = (By.LINK_TEXT, "Elemental Selenium")
 
     URL2 = "http://www.elementalselenium.com/"
 

@@ -16,7 +16,6 @@ def test_check_login_page(browser, login_page):
     with soft_assertions():
         assert_that(login_page.get_title_page()).is_equal_to("Login Page")
         assert_that(login_page.get_welcome_message()).contains("This is where you can log into the secure area.")
-        assert_that(browser.current_url).ends_with("/login")
         assert_that(browser.current_url).is_equal_to(login_page.URL)
         assert_that(login_page.is_login_button_displayed()).is_true()
 

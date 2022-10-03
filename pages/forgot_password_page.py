@@ -32,6 +32,6 @@ class ForgotPassword:
     def is_retrieve_pass_button_displayed(self):
         return self.browser.find_element(*self.RETRIEVE_PASSWORD_BUTTON).is_displayed()
 
-    def is_email_correct(self):
+    def retrieve_password_submit(self):
         return self.browser.find_element(*self.INTERNAL_ERROR).text
 
